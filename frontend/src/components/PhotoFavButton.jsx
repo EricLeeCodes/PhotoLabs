@@ -7,15 +7,13 @@ function PhotoFavButton() {
   const [isFavorite, setIsFavorite] = useState(false);
 
   const clickHandler = () => {
-    setIsFavorite((prevIsFavorite) => !prevIsFavorite);
+    setIsFavorite((isFavorite) => !isFavorite);
   };
 
   return (
     <div className="photo-list__fav-icon">
-      <div className="photo-list__fav-icon-svg">
-        <button onClick={clickHandler}>
-          <FavIcon isFavorite={isFavorite} />
-        </button>
+      <div className="photo-list__fav-icon-svg" onClick={clickHandler}>
+        <FavIcon selected={isFavorite} />
       </div>
     </div>
   );

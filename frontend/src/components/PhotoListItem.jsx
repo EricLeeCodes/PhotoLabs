@@ -5,6 +5,7 @@ import "../styles/PhotoListItem.scss";
 const PhotoListItem = (props) => {
   return (
     <div className="photo-list__item">
+      <PhotoFavButton />
       <img
         className="photo-list__image"
         key={props.photo.id}
@@ -22,7 +23,6 @@ const PhotoListItem = (props) => {
           </div>
         </div>
       </div>
-      <PhotoFavButton />
     </div>
   );
 };

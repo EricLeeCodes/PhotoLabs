@@ -18,11 +18,7 @@ const sampleDataForPhotoListItem = {
 const displayPhotos = (input) => {
   const photos = [];
   for (let i = 0; i < input; i++) {
-    photos.push(
-      <div>
-        <PhotoListItem key={i} photo={sampleDataForPhotoListItem} />
-      </div>
-    );
+    photos.push(<PhotoListItem key={i} photo={sampleDataForPhotoListItem} />);
   }
 
   return photos;
