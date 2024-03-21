@@ -25,8 +25,8 @@ const App = () => {
       <PhotoListItem key={index} photo={sampleDataForPhotoListItem} />
 
       ))} */}
-      {/* <PhotoList /> */}
-      <TopicList />
+      <PhotoList />
+      {/* <TopicList /> */}
     </div>
   );
 };
