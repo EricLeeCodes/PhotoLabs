@@ -2,6 +2,7 @@ import React from "react";
 
 import PhotoListItem from "./components/PhotoListItem";
 import "./App.scss";
+import PhotoFavButton from "components/PhotoFavButton";
 
 const sampleDataForPhotoListItem = {
   id: "1",
@@ -17,7 +18,12 @@ const sampleDataForPhotoListItem = {
 const displayPhotos = (input) => {
   const photos = [];
   for (let i = 0; i < input; i++) {
-    photos.push(<PhotoListItem key={i} photo={sampleDataForPhotoListItem} />);
+    photos.push(
+      <div>
+        <PhotoFavButton />
+        <PhotoListItem key={i} photo={sampleDataForPhotoListItem} />
+      </div>
+    );
   }
 
   return photos;
