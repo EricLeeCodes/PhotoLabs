@@ -57,14 +57,18 @@ const sampleDataForPhotoList = [
   },
 ];
 
+const helpers = () => {
+  for (let i = 0; i < sampleDataForPhotoList.length; i++) {
+    sampleDataForPhotoList[i];
+  }
+};
+
 const PhotoList = () => {
   return (
     <ul className="photo-list">
-      {sampleDataForPhotoList.map((_, index) => {
-        <li>
-          <PhotoListItem key={index} />
-        </li>;
-      })}
+      {sampleDataForPhotoList.map((_, index) => (
+        <PhotoListItem key={index} photo={sampleDataForPhotoList} />
+      ))}
     </ul>
   );
 };
