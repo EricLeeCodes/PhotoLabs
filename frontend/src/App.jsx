@@ -23,6 +23,7 @@ const App = () => {
       <PhotoListItem key={index} photo={sampleDataForPhotoListItem} />
 
       ))} */}
+      <PhotoList />
     </div>
   );
 };
