@@ -11,12 +11,14 @@ function PhotoFavButton() {
   };
 
   const favIconClass = isFavorite
-    ? "photo-list__fav-icon-svg"
-    : "photo-list__fav-icon";
+    ? "photo-list__fav-icon"
+    : "photo-list__fav-icon-svg";
 
   return (
     <div className={favIconClass}>
-      <button onClick={clickHandler}></button>
+      <button onClick={clickHandler}>
+        <FavIcon isFavorite={isFavorite} />
+      </button>
     </div>
   );
 }
