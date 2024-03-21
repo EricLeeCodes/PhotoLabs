@@ -3,11 +3,6 @@ import PhotoFavButton from "./PhotoFavButton";
 import "../styles/PhotoListItem.scss";
 
 const PhotoListItem = (props) => {
-  const [isFavorite, setIsFavorite] = useState("false");
-
-  const clickHandler = () => {
-    setIsFavorite(isFavorite === !isFavorite);
-  };
   return (
     <div className="photo-list__item">
       <img
@@ -27,7 +22,7 @@ const PhotoListItem = (props) => {
           </div>
         </div>
       </div>
-      <PhotoFavButton onClick={clickHandler} />
+      <PhotoFavButton />
     </div>
   );
 };
