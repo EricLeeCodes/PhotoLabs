@@ -4,18 +4,19 @@ import FavIcon from "./FavIcon";
 import "../styles/PhotoFavButton.scss";
 
 function PhotoFavButton() {
-  const [favorite, setFavorite] = useState("photo-list__fav-icon");
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const clickHandler = () => {
-    setFavorite(
-      favorite === "photo-list__fav-icon"
-        ? favorite === "photo-list__fav-icon-svg"
-        : favorite === "photo-list__fav-icon"
-    );
+    setIsFavorite((isFavorite) => !isFavorite);
   };
+
+  const favIconClass = isFavorite
+    ? "photo-list__fav-icon-svg"
+    : "photo-list__fav-icon";
+
   return (
-    <div className={favorite}>
-      <button onClick={clickHandler}>{FavIcon}</button>
+    <div className={favIconClass}>
+      <button onClick={clickHandler}></button>
     </div>
   );
 }

@@ -20,7 +20,6 @@ const displayPhotos = (input) => {
   for (let i = 0; i < input; i++) {
     photos.push(
       <div>
-        <PhotoFavButton />
         <PhotoListItem key={i} photo={sampleDataForPhotoListItem} />
       </div>
     );
