@@ -3,6 +3,8 @@ import "./App.scss";
 import PhotoFavButton from "components/PhotoFavButton";
 import PhotoListItem from "./components/PhotoListItem";
 import PhotoList from "components/PhotoList";
+import TopicListItem from "components/TopicListItem";
+import TopicList from "components/TopicList";
 
 // const sampleDataForPhotoListItem = {
 //   id: "1",
@@ -23,7 +25,8 @@ const App = () => {
       <PhotoListItem key={index} photo={sampleDataForPhotoListItem} />
 
       ))} */}
-      <PhotoList />
+      {/* <PhotoList /> */}
+      <TopicList />
     </div>
   );
 };
