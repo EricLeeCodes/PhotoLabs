@@ -14,7 +14,7 @@ function PhotoFavButton() {
     <div className="photo-list__fav-icon">
       <div className="photo-list__fav-icon-svg">
         <button onClick={clickHandler}>
-          <FavIcon />
+          <FavIcon isFavorite={isFavorite} />
         </button>
       </div>
     </div>
