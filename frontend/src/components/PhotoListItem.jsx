@@ -9,7 +9,6 @@ const PhotoListItem = (props) => {
         key={props.photo.id}
         src={props.photo.imageSource}
       ></img>
-      <div className="photo-list__user-details"></div>
       <div className="photo-list__user-details">
         <img
           className="photo-list__user-profile"
