@@ -13,7 +13,7 @@ const HomeRoute = (props) => {
       if (isFavorite.includes(id)) {
         return isFavorite.filter((favId) => favId !== id);
       } else {
-        return isFavorite.push(id);
+        return [...isFavorite, id];
       }
     });
   };
