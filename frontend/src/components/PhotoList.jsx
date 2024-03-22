@@ -11,7 +11,7 @@ const PhotoList = (props) => {
           key={photo.id}
           photo={photo}
           toggleFavourite={props.toggleFavourite}
-          isFavorite={props.isFavorite}
+          isFavorite={props.isFavorite.includes(photo.id)}
         />
       ))}
     </ul>
