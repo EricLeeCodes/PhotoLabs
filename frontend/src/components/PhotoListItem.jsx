@@ -6,7 +6,7 @@ const PhotoListItem = (props) => {
   return (
     <div className="photo-list__item">
       <PhotoFavButton
-        clickHandler={props.clickHandler}
+        toggleFavourite={props.toggleFavourite}
         isFavorite={props.isFavorite}
       />
       <img

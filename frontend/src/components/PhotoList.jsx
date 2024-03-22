@@ -10,7 +10,7 @@ const PhotoList = (props) => {
         <PhotoListItem
           key={photo.id}
           photo={photo}
-          clickHandler={props.clickHandler}
+          toggleFavourite={props.toggleFavourite}
           isFavorite={props.isFavorite}
         />
       ))}
