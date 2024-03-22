@@ -15,7 +15,6 @@ const PhotoListItem = (props) => {
       <PhotoFavButton
         toggleFavorite={() => {
           props.toggleFavorite(props.photo.id);
-          console.log("Clicked", props.photo.id);
         }}
         isFavorite={isFavorite}
       />

@@ -18,10 +18,9 @@ const HomeRoute = (props) => {
     });
   };
 
-  console.log(props.photos);
   return (
     <div className="home-route">
-      <TopNavigation topics={props.topics} />
+      <TopNavigation topics={props.topics} favorites={favorites} />
       <PhotoList
         photos={props.photos}
         toggleFavorite={toggleFavorite}
