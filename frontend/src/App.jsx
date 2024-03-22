@@ -1,11 +1,6 @@
 import React from "react";
 import "./App.scss";
-import PhotoFavButton from "components/PhotoFavButton";
-import PhotoListItem from "./components/PhotoListItem";
-import PhotoList from "components/PhotoList";
-import TopicListItem from "components/TopicListItem";
-import TopicList from "components/TopicList";
-import TopNavigationBar from "components/TopNavigationBar";
+import HomeRoute from "routes/HomeRoute";
 
 // const sampleDataForPhotoListItem = {
 //   id: "1",
@@ -28,7 +23,7 @@ const App = () => {
       ))} */}
       {/* <PhotoList /> */}
       {/* <TopicList /> */}
-      <TopNavigationBar />
+      <HomeRoute />
     </div>
   );
 };
