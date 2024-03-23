@@ -9,7 +9,7 @@ import PhotoDetailsModal from "routes/PhotoDetailsModal";
 const App = () => {
   const [displayModal, setDisplayModal] = useState(false);
 
-  const displayHandler = (isDisplaying) => {
+  const displayModalHandler = (isDisplaying) => {
     setDisplayModal(isDisplaying);
   };
 
@@ -18,9 +18,11 @@ const App = () => {
       <HomeRoute
         photos={photos}
         topics={topics}
-        displayHandler={displayHandler}
+        displayModalHandler={displayModalHandler}
       />
-      {displayModal && <PhotoDetailsModal displayHandler={displayHandler} />}
+      {displayModal && (
+        <PhotoDetailsModal displayModalHandler={displayModalHandler} />
+      )}
     </div>
   );
 };
