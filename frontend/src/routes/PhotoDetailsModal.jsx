@@ -43,7 +43,7 @@ const PhotoDetailsModal = (props) => {
       </div>
 
       <div className="photo-details-modal__images"></div>
-      <PhotoList similarPhotos={props.photo.similar_photos} />
+      <PhotoList photos={props.photo.similar_photos} />
     </div>
   );
 };
