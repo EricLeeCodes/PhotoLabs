@@ -6,6 +6,8 @@ import PhotoList from "components/PhotoList";
 import "../styles/HomeRoute.scss";
 
 const HomeRoute = (props) => {
+  console.log(props.displayModalHandler);
+
   const [favorites, setFavorites] = useState([]);
 
   const toggleFavorite = (id) => {
