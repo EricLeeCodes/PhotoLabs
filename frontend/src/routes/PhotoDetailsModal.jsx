@@ -6,7 +6,6 @@ import PhotoFavButton from "components/PhotoFavButton";
 import PhotoList from "components/PhotoList";
 
 const PhotoDetailsModal = (props) => {
-  const isFavorite = false;
   return (
     <div className="photo-details-modal">
       <button
@@ -47,8 +46,9 @@ const PhotoDetailsModal = (props) => {
 
       <div className="photo-details-modal__images">
         <PhotoList
-          photos={props.photo.similar_photos}
+          photos={Object.values(props.photo.similar_photos)}
           favorites={props.favorites}
+          toggleFavorite={props.toggleFavorite}
         />
       </div>
     </div>

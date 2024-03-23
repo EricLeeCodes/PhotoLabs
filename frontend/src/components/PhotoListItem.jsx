@@ -4,9 +4,7 @@ import "../styles/PhotoListItem.scss";
 
 const PhotoListItem = (props) => {
   //change to check the bool
-  {
-    console.log(props.isFavorite);
-  }
+
   return (
     <div className="photo-list__item">
       <PhotoFavButton
