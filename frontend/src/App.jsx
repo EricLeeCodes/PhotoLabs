@@ -21,9 +21,7 @@ const App = () => {
         displayHandler={displayHandler}
         displayModal={displayModal}
       />
-      <PhotoDetailsModal
-        style={{ display: displayModal ? "inline" : "none" }}
-      />
+      {displayModal && <PhotoDetailsModal />}
     </div>
   );
 };
