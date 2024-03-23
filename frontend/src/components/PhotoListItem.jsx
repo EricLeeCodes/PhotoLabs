@@ -22,7 +22,7 @@ const PhotoListItem = (props) => {
         className="photo-list__image"
         key={props.photo.id}
         src={props.photo.urls.regular}
-        onClick={props.displayHandler}
+        onClick={() => props.displayHandler(true)}
       ></img>
       <div className="photo-list__user-details">
         <img

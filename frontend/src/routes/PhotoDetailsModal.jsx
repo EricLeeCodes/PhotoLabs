@@ -8,7 +8,7 @@ const PhotoDetailsModal = (props) => {
     <div className="photo-details-modal">
       <button
         className="photo-details-modal__close-button"
-        onClick={props.displayHandler}
+        onClick={() => props.displayHandler(false)}
       >
         <img src={closeSymbol} alt="close symbol" />
       </button>

@@ -9,8 +9,8 @@ import PhotoDetailsModal from "routes/PhotoDetailsModal";
 const App = () => {
   const [displayModal, setDisplayModal] = useState(false);
 
-  const displayHandler = (id) => {
-    setDisplayModal((displayModal) => !displayModal);
+  const displayHandler = (isDisplaying) => {
+    setDisplayModal(isDisplaying);
   };
 
   return (
