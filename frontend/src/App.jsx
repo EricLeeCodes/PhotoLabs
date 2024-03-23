@@ -19,9 +19,8 @@ const App = () => {
         photos={photos}
         topics={topics}
         displayHandler={displayHandler}
-        displayModal={displayModal}
       />
-      {displayModal && <PhotoDetailsModal />}
+      {displayModal && <PhotoDetailsModal displayHandler={displayHandler} />}
     </div>
   );
 };
