@@ -3,8 +3,6 @@ import PhotoFavButton from "./PhotoFavButton";
 import "../styles/PhotoListItem.scss";
 
 const PhotoListItem = (props) => {
-  console.log(props.displayModalHandler);
-
   //change to check the bool
   let isFavorite = false;
 

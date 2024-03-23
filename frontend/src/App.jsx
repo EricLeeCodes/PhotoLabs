@@ -21,7 +21,10 @@ const App = () => {
         displayModalHandler={displayModalHandler}
       />
       {displayModal && (
-        <PhotoDetailsModal displayModalHandler={displayModalHandler} />
+        <PhotoDetailsModal
+          displayModalHandler={displayModalHandler}
+          photos={photos}
+        />
       )}
     </div>
   );

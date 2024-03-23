@@ -12,6 +12,8 @@ const PhotoDetailsModal = (props) => {
       >
         <img src={closeSymbol} alt="close symbol" />
       </button>
+
+      <img src={props.photos} />
     </div>
   );
 };
