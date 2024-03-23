@@ -20,7 +20,6 @@ const PhotoDetailsModal = (props) => {
           toggleFavorite={() => {
             props.toggleFavorite(props.photo.id);
           }}
-          isFavorite={isFavorite}
         />
         <img
           className="photo-details-modal__image"

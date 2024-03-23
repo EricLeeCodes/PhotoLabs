@@ -8,6 +8,10 @@ import "../styles/HomeRoute.scss";
 const HomeRoute = (props) => {
   const [favorites, setFavorites] = useState([]);
 
+  // if (props.favorites.includes(props.photo.id)) {
+  //   isFavorite = true;
+  // }
+
   const toggleFavorite = (id) => {
     setFavorites((favorites) => {
       if (favorites.includes(id)) {
