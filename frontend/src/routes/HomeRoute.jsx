@@ -25,6 +25,8 @@ const HomeRoute = (props) => {
         photos={props.photos}
         toggleFavorite={toggleFavorite}
         favorites={favorites}
+        displayHandler={props.displayHandler}
+        displayModal={props.displayModal}
       />
     </div>
   );
