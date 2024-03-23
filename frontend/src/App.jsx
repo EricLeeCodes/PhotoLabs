@@ -26,6 +26,7 @@ const App = () => {
         <PhotoDetailsModal
           displayModalHandler={displayModalHandler}
           photo={selectedPhoto}
+          photos={photos}
         />
       )}
     </div>

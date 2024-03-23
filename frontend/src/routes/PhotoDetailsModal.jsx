@@ -16,7 +16,12 @@ const PhotoDetailsModal = (props) => {
       </button>
 
       <div className="move-left">
-        <PhotoFavButton />
+        <PhotoFavButton
+          toggleFavorite={() => {
+            props.toggleFavorite(props.photo.id);
+          }}
+          isFavorite={isFavorite}
+        />
         <img
           className="photo-details-modal__image"
           src={props.photo.urls.full}
@@ -39,7 +44,7 @@ const PhotoDetailsModal = (props) => {
       </div>
 
       <div className="photo-details-modal__images">
-        <PhotoList />
+        {/* <PhotoList photos={props.photos} /> */}
       </div>
     </div>
   );
