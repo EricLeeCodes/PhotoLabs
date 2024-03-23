@@ -8,9 +8,11 @@ import PhotoDetailsModal from "routes/PhotoDetailsModal";
 // Note: Rendering a single component to build components in isolation
 const App = () => {
   const [displayModal, setDisplayModal] = useState(false);
+  const [selectedPhoto, setSelectedPhoto] = useState({});
 
-  const displayModalHandler = (isDisplaying) => {
+  const displayModalHandler = (isDisplaying, photo) => {
     setDisplayModal(isDisplaying);
+    return setSelectedPhoto(photo);
   };
 
   return (
@@ -23,7 +25,7 @@ const App = () => {
       {displayModal && (
         <PhotoDetailsModal
           displayModalHandler={displayModalHandler}
-          photos={photos}
+          photo={selectedPhoto}
         />
       )}
     </div>
