@@ -6,30 +6,15 @@ import PhotoList from "components/PhotoList";
 import "../styles/HomeRoute.scss";
 
 const HomeRoute = (props) => {
-  const [favorites, setFavorites] = useState([]);
-
-  // if (props.favorites.includes(props.photo.id)) {
-  //   isFavorite = true;
-  // }
-
-  const toggleFavorite = (id) => {
-    setFavorites((favorites) => {
-      if (favorites.includes(id)) {
-        return favorites.filter((favId) => favId !== id);
-      } else {
-        return [...favorites, id];
-      }
-    });
-  };
-
   return (
     <div className="home-route">
-      <TopNavigation topics={props.topics} favorites={favorites} />
+      <TopNavigation topics={props.topics} favorites={props.favorites} />
       <PhotoList
         photos={props.photos}
-        toggleFavorite={toggleFavorite}
-        favorites={favorites}
+        toggleFavorite={props.toggleFavorite}
+        favorites={props.favorites}
         displayModalHandler={props.displayModalHandler}
+        isFavorite={props.isFavorite}
       />
     </div>
   );

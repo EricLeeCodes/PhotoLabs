@@ -4,11 +4,6 @@ import "../styles/PhotoListItem.scss";
 
 const PhotoListItem = (props) => {
   //change to check the bool
-  let isFavorite = false;
-
-  if (props.favorites.includes(props.photo.id)) {
-    isFavorite = true;
-  }
 
   return (
     <div className="photo-list__item">
@@ -16,7 +11,7 @@ const PhotoListItem = (props) => {
         toggleFavorite={() => {
           props.toggleFavorite(props.photo.id);
         }}
-        isFavorite={isFavorite}
+        isFavorite={props.isFavorite}
       />
       <img
         className="photo-list__image"

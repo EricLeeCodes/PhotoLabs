@@ -9,10 +9,23 @@ import PhotoDetailsModal from "routes/PhotoDetailsModal";
 const App = () => {
   const [displayModal, setDisplayModal] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState({});
+  const [favorites, setFavorites] = useState([]);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const displayModalHandler = (isDisplaying, photo) => {
     setDisplayModal(isDisplaying);
     return setSelectedPhoto(photo);
+  };
+
+  const toggleFavorite = (id) => {
+    setFavorites((favorites) => {
+      if (favorites.includes(id)) {
+        setIsFavorite(!isFavorite);
+        return favorites.filter((favId) => favId !== id);
+      } else {
+        return [...favorites, id];
+      }
+    });
   };
 
   return (
@@ -21,12 +34,18 @@ const App = () => {
         photos={photos}
         topics={topics}
         displayModalHandler={displayModalHandler}
+        favorites={favorites}
+        toggleFavorite={toggleFavorite}
+        isFavorite={isFavorite}
       />
       {displayModal && (
         <PhotoDetailsModal
           displayModalHandler={displayModalHandler}
           photo={selectedPhoto}
           photos={photos}
+          favorites={favorites}
+          toggleFavorite={toggleFavorite}
+          isFavorite={isFavorite}
         />
       )}
     </div>
