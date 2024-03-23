@@ -10,7 +10,6 @@ const App = () => {
   const [displayModal, setDisplayModal] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState({});
   const [favorites, setFavorites] = useState([]);
-  const [isFavorite, setIsFavorite] = useState(false);
 
   const displayModalHandler = (isDisplaying, photo) => {
     setDisplayModal(isDisplaying);
@@ -18,9 +17,9 @@ const App = () => {
   };
 
   const toggleFavorite = (id) => {
+    console.log("Toggle Fav function ", id);
     setFavorites((favorites) => {
       if (favorites.includes(id)) {
-        setIsFavorite(!isFavorite);
         return favorites.filter((favId) => favId !== id);
       } else {
         return [...favorites, id];
@@ -36,7 +35,6 @@ const App = () => {
         displayModalHandler={displayModalHandler}
         favorites={favorites}
         toggleFavorite={toggleFavorite}
-        isFavorite={isFavorite}
       />
       {displayModal && (
         <PhotoDetailsModal
@@ -45,7 +43,6 @@ const App = () => {
           photos={photos}
           favorites={favorites}
           toggleFavorite={toggleFavorite}
-          isFavorite={isFavorite}
         />
       )}
     </div>

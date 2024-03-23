@@ -6,7 +6,6 @@ import PhotoListItem from "./PhotoListItem";
 const PhotoList = (props) => {
   return (
     <ul className="photo-list">
-      {console.log(props.photos)}
       {Array.isArray(props.photos)
         ? props.photos.map((photo) => (
             <PhotoListItem
@@ -15,7 +14,6 @@ const PhotoList = (props) => {
               toggleFavorite={props.toggleFavorite}
               favorites={props.favorites}
               displayModalHandler={props.displayModalHandler}
-              isFavorite={props.isFavorite}
             />
           ))
         : Object.values(props.photos).map((photo) => (
@@ -25,7 +23,6 @@ const PhotoList = (props) => {
               toggleFavorite={props.toggleFavorite}
               favorites={props.favorites}
               displayModalHandler={props.displayModalHandler}
-              isFavorite={props.isFavorite}
             />
           ))}
     </ul>
