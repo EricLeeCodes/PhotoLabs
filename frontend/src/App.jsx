@@ -4,12 +4,11 @@ import HomeRoute from "routes/HomeRoute";
 import photos from "mocks/photos";
 import topics from "mocks/topics";
 import PhotoDetailsModal from "routes/PhotoDetailsModal";
+import ApplicationData from "./hooks/ApplicationData";
 
 // Note: Rendering a single component to build components in isolation
 const App = () => {
-  const [displayModal, setDisplayModal] = useState(false);
-  const [selectedPhoto, setSelectedPhoto] = useState({});
-  const [favorites, setFavorites] = useState([]);
+  const { displayModal, selectedPhoto, favorites } = useApplicationData();
 
   const displayModalHandler = (isDisplaying, photo) => {
     setDisplayModal(isDisplaying);
@@ -17,7 +16,6 @@ const App = () => {
   };
 
   const toggleFavorite = (id) => {
-    console.log("Toggle Fav function ", id);
     setFavorites((favorites) => {
       if (favorites.includes(id)) {
         return favorites.filter((favId) => favId !== id);
