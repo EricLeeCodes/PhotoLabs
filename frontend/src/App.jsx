@@ -4,7 +4,7 @@ import HomeRoute from "routes/HomeRoute";
 import photos from "mocks/photos";
 import topics from "mocks/topics";
 import PhotoDetailsModal from "routes/PhotoDetailsModal";
-import ApplicationData from "./hooks/ApplicationData";
+import useApplicationData from "./hooks/useApplicationData";
 
 // Note: Rendering a single component to build components in isolation
 const App = () => {
