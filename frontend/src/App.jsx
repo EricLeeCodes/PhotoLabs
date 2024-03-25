@@ -16,6 +16,8 @@ const App = () => {
     toggleFavorite,
   } = useApplicationData();
 
+  console.log(selectedPhoto);
+
   return (
     <div className="App">
       <HomeRoute
