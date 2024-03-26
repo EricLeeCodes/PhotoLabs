@@ -10,6 +10,7 @@ const useApplicationData = () => {
   const HIDE_MODAL = "HIDE_MODAL";
   const SET_PHOTO_DATA = "SET_PHOTO_DATA";
   const SET_TOPIC_DATA = "SET_TOPIC_DATA";
+  const GET_PHOTOS_BY_TOPICS = "GET_PHOTOS_BY_TOPICS";
 
 
 
@@ -20,24 +21,42 @@ const useApplicationData = () => {
     favorites: [],
     //API data
     photoData: [],
-    topicData: []
+    topicData: [],
+    topicId: []
   };
 
   const [state, dispatch] = useReducer(reducer, initial);
 
-
+  //GET all photos
   useEffect(() => {
     fetch('/api/photos')
       .then((response) => response.json())
       .then((data) => dispatch({ type: SET_PHOTO_DATA, payload: data }));
   }, []);
 
+  //GET all topics
   useEffect(() => {
     fetch('/api/topics')
       .then((response) => response.json())
       .then((data) => dispatch({ type: SET_TOPIC_DATA, payload: data }));
   }, []);
 
+  //GET photos BY topics
+  useEffect(() => {
+    fetch(`http://localhost:8001/api/topics/photos/:topic_id`)
+      .then((response) => response.json())
+      .then((data) => dispatch({ type: GET_PHOTOS_BY_TOPICS, payload: data }));
+  }, []);
+
+
+  function getTopicId(topicId) {
+    if (topicId) {
+      dispatch({
+        type: GET_PHOTOS_BY_TOPICS,
+        payload: topicId
+      });
+    }
+  }
 
   function displayModalHandler(selectedPhoto) {
     if (selectedPhoto) {
@@ -98,6 +117,8 @@ const useApplicationData = () => {
         return { ...state, photoData: action.payload };
       case SET_TOPIC_DATA:
         return { ...state, topicData: action.payload };
+      case GET_PHOTOS_BY_TOPICS:
+        return { ...state, topicId: action.payload };
       default:
         return state;
     }
@@ -110,7 +131,8 @@ const useApplicationData = () => {
     displayModalHandler: displayModalHandler,
     toggleFavorite: toggleFavorite,
     photos: state.photoData,
-    topics: state.topicData
+    topics: state.topicData,
+    getTopicId: getTopicId
   };
 
 };

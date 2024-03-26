@@ -12,6 +12,10 @@ app.get("/api/topics", (req, res) => {
   res.json(data);
 });
 
+app.get("http://localhost:8001/api/topics/photos/:topic_id", (req, res) => {
+  res.json(data);
+});
+
 server.listen(PORT, () => {
   console.log(`Listening on port ${PORT} in ${ENV} mode.`);
 });

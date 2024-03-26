@@ -14,6 +14,7 @@ const App = () => {
     toggleFavorite,
     photos,
     topics,
+    getTopicId,
   } = useApplicationData();
 
   return (
@@ -24,6 +25,7 @@ const App = () => {
         displayModalHandler={displayModalHandler}
         favorites={favorites}
         toggleFavorite={toggleFavorite}
+        getTopicId={getTopicId}
       />
       {displayModal && (
         <PhotoDetailsModal
