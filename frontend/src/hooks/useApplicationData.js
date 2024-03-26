@@ -3,7 +3,7 @@ import { useReducer, useEffect } from "react";
 
 const useApplicationData = () => {
 
-
+  //Actions to prevent typos
   const SHOW_MODAL = "SHOW_MODAL";
   const ADD_FAVORITE = "ADD_FAVORITE";
   const REMOVE_FAVORITE = "REMOVE_FAVORITE";
@@ -13,9 +13,7 @@ const useApplicationData = () => {
   const GET_PHOTOS_BY_TOPICS = "GET_PHOTOS_BY_TOPICS";
   const SET_PHOTOS_BY_TOPIC = "SET_PHOTOS_BY_TOPIC";
 
-
-
-
+  //Initial states
   const initial = {
     displayModal: false,
     selectedPhoto: {},
@@ -51,10 +49,12 @@ const useApplicationData = () => {
     }
   }, [state.topicId]);
 
+  //Get the id of the topics
   function selectTopic(newTopicId) {
     dispatch({ type: GET_PHOTOS_BY_TOPICS, payload: newTopicId });
   }
 
+  //Show modal when selecting a photo, hide otherwise.
   function displayModalHandler(selectedPhoto) {
     if (selectedPhoto) {
       dispatch({
@@ -68,6 +68,8 @@ const useApplicationData = () => {
     }
   }
 
+
+  //Can add/remove from favorites
   function toggleFavorite(id) {
     if (state.favorites.includes(id)) {
       // If the id is already in favorites, we want to remove it.
@@ -104,7 +106,7 @@ const useApplicationData = () => {
         return {
           ...state,
           displayModal: true,
-          selectedPhoto: action.payload // assuming action.payload contains the photo object
+          selectedPhoto: action.payload //Shows the modal
         };
       case HIDE_MODAL:
         return {
@@ -112,6 +114,7 @@ const useApplicationData = () => {
           displayModal: false,
           selectedPhoto: {} // resets to no selected photo
         };
+      //API related actions. Getting/setting
       case SET_PHOTO_DATA:
         return { ...state, photoData: action.payload };
       case SET_TOPIC_DATA:

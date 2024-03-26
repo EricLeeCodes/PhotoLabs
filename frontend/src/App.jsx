@@ -6,6 +6,7 @@ import useApplicationData from "hooks/useApplicationData.js";
 
 // Note: Rendering a single component to build components in isolation
 const App = () => {
+  //Return values from useApplicationData
   const {
     displayModal,
     selectedPhoto,
