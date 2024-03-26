@@ -11,7 +11,7 @@ const HomeRoute = (props) => {
       <TopNavigation
         topics={props.topics}
         favorites={props.favorites}
-        getTopicId={props.getTopicId}
+        selectTopic={props.selectTopic}
       />
       <PhotoList
         photos={props.photos}

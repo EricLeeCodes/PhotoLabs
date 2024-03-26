@@ -6,9 +6,6 @@ import PhotoFavButton from "components/PhotoFavButton";
 import PhotoList from "components/PhotoList";
 
 const PhotoDetailsModal = (props) => {
-  {
-    console.log("props.photo", props.photo);
-  }
   return (
     <div className="photo-details-modal">
       <button

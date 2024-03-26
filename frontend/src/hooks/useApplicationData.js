@@ -11,6 +11,7 @@ const useApplicationData = () => {
   const SET_PHOTO_DATA = "SET_PHOTO_DATA";
   const SET_TOPIC_DATA = "SET_TOPIC_DATA";
   const GET_PHOTOS_BY_TOPICS = "GET_PHOTOS_BY_TOPICS";
+  const SET_PHOTOS_BY_TOPIC = "SET_PHOTOS_BY_TOPIC";
 
 
 
@@ -22,7 +23,7 @@ const useApplicationData = () => {
     //API data
     photoData: [],
     topicData: [],
-    topicId: []
+    topicId: null
   };
 
   const [state, dispatch] = useReducer(reducer, initial);
@@ -43,19 +44,15 @@ const useApplicationData = () => {
 
   //GET photos BY topics
   useEffect(() => {
-    fetch(`http://localhost:8001/api/topics/photos/:topic_id`)
-      .then((response) => response.json())
-      .then((data) => dispatch({ type: GET_PHOTOS_BY_TOPICS, payload: data }));
-  }, []);
-
-
-  function getTopicId(topicId) {
-    if (topicId) {
-      dispatch({
-        type: GET_PHOTOS_BY_TOPICS,
-        payload: topicId
-      });
+    if (state.topicId) {
+      fetch(`http://localhost:8001/api/topics/photos/${state.topicId}`)
+        .then((response) => response.json())
+        .then((data) => dispatch({ type: SET_PHOTOS_BY_TOPIC, payload: data }));
     }
+  }, [state.topicId]);
+
+  function selectTopic(newTopicId) {
+    dispatch({ type: GET_PHOTOS_BY_TOPICS, payload: newTopicId });
   }
 
   function displayModalHandler(selectedPhoto) {
@@ -87,6 +84,8 @@ const useApplicationData = () => {
     }
   };
 
+
+  //The brain!
   function reducer(state, action) {
     switch (action.type) {
       case ADD_FAVORITE:
@@ -119,6 +118,8 @@ const useApplicationData = () => {
         return { ...state, topicData: action.payload };
       case GET_PHOTOS_BY_TOPICS:
         return { ...state, topicId: action.payload };
+      case SET_PHOTOS_BY_TOPIC:
+        return { ...state, photoData: action.payload };
       default:
         return state;
     }
@@ -132,7 +133,7 @@ const useApplicationData = () => {
     toggleFavorite: toggleFavorite,
     photos: state.photoData,
     topics: state.topicData,
-    getTopicId: getTopicId
+    selectTopic: selectTopic,
   };
 
 };
