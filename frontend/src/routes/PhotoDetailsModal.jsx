@@ -46,7 +46,12 @@ const PhotoDetailsModal = (props) => {
 
       <div className="photo-details-modal__images">
         <PhotoList
-          photos={Object.values(props.photo.similar_photos)}
+          displayModalHandler={props.displayModalHandler}
+          photos={
+            props.photo.similar_photos
+              ? Object.values(props.photo.similar_photos)
+              : []
+          }
           favorites={props.favorites}
           toggleFavorite={props.toggleFavorite}
         />
